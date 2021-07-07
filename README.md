@@ -1,6 +1,6 @@
 # slack-doc
 
-Slack app to export conversation threads to documents.
+Slack app to export conversation threads to documents and more.
 
 This app works on plugin based design
 

@@ -19,6 +19,13 @@ TODO: Fix documentation
   URL. Any interaction event on Slack will be sent to this hook.
 - Create a new shortcut for your plugin with `callback_id` as the one you used
   to register your plugin.
+  
+## Sample
+
+<p align="center">
+    <b>Message Shortcut</b><br/><br/>
+    <img src="https://i.imgur.com/0PzqYZZ.png" />
+</p>
 
 ## Plugins supported
 

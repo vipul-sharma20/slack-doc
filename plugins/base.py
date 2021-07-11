@@ -21,5 +21,12 @@ class ExportSlackThread:
 
         return utils.get_conversation_history(channel_id, parent_id, self.client)
 
+    def send_message(self, text: str):
+        channel = self.message_data["channel"]["name"]
+        thread_ts = self.message_data["message"]["thread_ts"]
+
+        self.client.chat_postMessage(
+            channel=f"#{channel}", thread_ts=thread_ts, text=f"Doc at: {text}")
+
     def export_thread(self):
         raise NotImplementedError

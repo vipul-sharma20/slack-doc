@@ -2,37 +2,50 @@
 
 Slack app to export conversation threads to documents and more.
 
-This app works on plugin based design
+## Deployment
 
-🚧WIP🚧
+```
+docker-compose up
+```
 
-TODO: Fix documentation
+Make sure to update the environment variables.
 
-## Development
+## Integration
 
-- Implement the [plugin][plugin_base] and keep them at `slack_doc/plugins`.
-- Add your plugin in [`PLUGINS`][plugin_map]
+- Create an app on Slack, for example: `slack-doc`.
+- Create Slack bot token (check "OAuth & Permissions" in your app page) and add
+  it as environment variable in [docker-compose.yaml][docker-compose].
+    - Add following scopes: `channels:history`, `channels:join`,
+      `channels:read`, `chat:write`, `commands`, `users.profile:read`,
+      `users:read`.
+- Deploy the application with the tokens.
+- Add "Request URL" under "Interactivity & Shortcuts" as `http://<host>:<port>/slack/shortcut-trigger/`.
+- Create message "Shortcuts" under "Interactivity & Shortcuts"
+    - Create a new shortcut for your plugin with callback ID as the one
+      provided in the plugin [factory][plugin_factory].
+- Add the Slack app in your channel (Example: `/invite @slack-doc`).
+- Check message options on any thread and you should see the message shortcuts
+  you would've added in the list.
 
-### Slack configuration
+## Exporters
 
-- Create app and add `HOST:PORT/slack/shortcut-trigger/` in the interactivity
-  URL. Any interaction event on Slack will be sent to this hook.
-- Create a new shortcut for your plugin with `callback_id` as the one you used
-  to register your plugin.
-  
-## Sample
+This application has exporter plugins to export threads to different mediums.
+Currently supported exporters:
 
-<p align="center">
-    <b>Message Shortcut</b><br/><br/>
-    <img src="https://i.imgur.com/0PzqYZZ.png" />
-</p>
-
-## Plugins supported
-
-- [Outline][outline_home]
-- Markdown (generic markdown, currently being used as a base for all markdown based plugins)
+- [Outline Wiki][outline_plugin]
+- [Gist][gist_plugin]
+- [Markdown][markdown_plugin] (generic markdown, currently being used as a base
+  for all markdown based exporters)
 - ...
 
-[plugin_base]: slack_doc/plugins/base.py
-[plugin_map]: slack_doc/routes.py
-[outline_home]: https://www.getoutline.com/
+Check [plugins doc][plugins_doc] on how to add your own custom exporter.
+
+
+[plugin_base]: plugins/base.py
+[plugin_map]: slack_doc/factory.py
+[plugin_factory]: slack_doc/factory.py
+[docker-compose]: docker-compose.yaml
+[outline_plugin]: plugins/outline.py
+[gist_plugin]: plugins/gist.py
+[markdown_plugin]: plugins/markdown.py
+[plugins_doc]: plugins/README.md

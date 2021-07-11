@@ -1,5 +1,7 @@
 # slack-doc
 
+[![Docker Automated build](https://img.shields.io/docker/cloud/automated/vipul-sharma20/slack-doc)]()
+
 Slack app to export conversation threads to documents and more.
 
 ## Deployment

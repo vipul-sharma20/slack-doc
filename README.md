@@ -10,6 +10,8 @@ docker-compose up
 
 Make sure to update the environment variables.
 
+Pre-built image at: https://hub.docker.com/repository/docker/vipul20/slack-doc
+
 ## Integration
 
 - Create an app on Slack, for example: `slack-doc`.

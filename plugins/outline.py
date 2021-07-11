@@ -3,7 +3,7 @@ from string import Template
 
 import requests
 
-from .markdown import ExportMarkdown
+from plugins.markdown import ExportMarkdown
 
 
 DOCUMENT_TEMPLATE = """

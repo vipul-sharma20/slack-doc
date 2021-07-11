@@ -1,6 +1,6 @@
 from string import Template
 
-from .base import ExportSlackThread
+from plugins.base import ExportSlackThread
 
 
 MESSAGE_TEMPLATE = """
@@ -25,7 +25,7 @@ class ExportMarkdown(ExportSlackThread):
     def export_thread(self) -> str:
         conversation_history = self.get_thread()
         markdown_content: str = ""
-       
+
         # TODO: Make this more comprehensible
         for message in conversation_history["messages"]:
             text: str = ""

@@ -3,7 +3,7 @@ from typing import List
 
 from slack import WebClient
 
-from . import utils
+import plugins.utils as utils
 
 
 class ExportSlackThread:

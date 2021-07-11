@@ -26,5 +26,8 @@ To update/add the new exporter on Slack:
   provided in the plugin [factory][plugin_factory].
 
 
-[factory]: slack_doc/factory.py
-[base]: plugins/base.py
+[gist_plugin]: gist.py
+[outline_plugin]: outline.py
+[markdown_plugin]: markdown.py
+[factory]: ../slack_doc/factory.py
+[base]: base.py

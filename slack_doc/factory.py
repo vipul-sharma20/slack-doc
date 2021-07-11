@@ -1,10 +1,8 @@
-from plugins.base import ExportSlackThread
-from plugins.markdown import ExportMarkdown
 from plugins.outline import ExportOutline
+from plugins.gist import ExportGist
 
 
 PLUGINS = {
-    # "export_thread": ExportSlackThread,
-    "export_thread": ExportMarkdown
-    # "export_thread": ExportOutline,
+    "export_gist": ExportGist,
+    "export_outline": ExportOutline,
 }

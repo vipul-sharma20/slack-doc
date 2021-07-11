@@ -23,4 +23,4 @@ ENV REDIS_PORT=6379
 ENV FLASK_APP=slack_doc
 
 # CMD ["flask", "run", "-p", "8000"]
-CMD ["uwsgi", "--http-socket", ":5000", "--enable-threads", "--threads", "4", "--module", "slack-doc:create_app()", "--workers", "2", "--buffer-size", "32768"]
+CMD ["uwsgi", "--http-socket", ":8000", "--enable-threads", "--threads", "4", "--module", "slack-doc:create_app()", "--workers", "2", "--buffer-size", "32768"]

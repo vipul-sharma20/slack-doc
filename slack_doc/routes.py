@@ -4,16 +4,7 @@ import traceback
 from flask import current_app as app
 from flask import request, make_response
 
-from plugins.base import ExportSlackThread
-from plugins.markdown import ExportMarkdown
-from plugins.outline import ExportOutline
-
-
-PLUGINS = {
-    # "export_thread": ExportSlackThread,
-    # "export_markdown": ExportMarkdown
-    "export_thread": ExportOutline,
-}
+from slack_doc.factory import PLUGINS
 
 
 @app.route("/slack/shortcut-trigger/", methods=["POST"])

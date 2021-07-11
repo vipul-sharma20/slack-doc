@@ -14,11 +14,13 @@ Currently supported exporters:
 
 ## Writing exporter plugins
 
-Implement the `ExportThread` base class in [base.py][base] in a new plugin and
-include them in [slack_doc/factory.py][factory]
+Implement the `export_thread` method of `ExportThread` base class in
+[base.py][base] in a new plugin and include them in
+[slack_doc/factory.py][factory]. The `export_thread` method is called based on
+the callback ID configured in Slack.
 
 Check one of the the pre-existing exporter plugins (for example:
-[markdown.py][markdown_plugin])
+[markdown.py][markdown_plugin]).
 
 To update/add the new exporter on Slack:
 - Create new message "Shortcuts" under "Interactivity & Shortcuts"

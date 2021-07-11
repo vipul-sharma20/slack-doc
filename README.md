@@ -16,7 +16,7 @@ Pre-built image at: https://hub.docker.com/repository/docker/vipul20/slack-doc
 
 - Create an app on Slack, for example: `slack-doc`.
 - Create Slack bot token (check "OAuth & Permissions" in your app page) and add
-  it as environment variable in [docker-compose.yaml][docker-compose].
+  it as environment variable in [docker-compose.yml][docker-compose].
     - Add following scopes: `channels:history`, `channels:join`,
       `channels:read`, `chat:write`, `commands`, `users.profile:read`,
       `users:read`.
@@ -46,7 +46,7 @@ Check [plugins doc][plugins_doc] on how to add your own custom exporter.
 [plugin_base]: plugins/base.py
 [plugin_map]: slack_doc/factory.py
 [plugin_factory]: slack_doc/factory.py
-[docker-compose]: docker-compose.yaml
+[docker-compose]: docker-compose.yml
 [outline_plugin]: plugins/outline.py
 [gist_plugin]: plugins/gist.py
 [markdown_plugin]: plugins/markdown.py

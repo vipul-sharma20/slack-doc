@@ -12,8 +12,7 @@ ENV OUTLINE_HOST=host
 ENV OUTLINE_TOKEN=token
 ENV OUTLINE_COLLECTION_ID=token
 
-ENV PYTHONPATH=/home/slack-doc/slack_doc
-ENV FLASK_APP=slack_doc/__init__.py
+ENV FLASK_APP=slack_doc
 
 CMD ["flask", "run", "-p", "8000"]
 # CMD ["uwsgi", "--http-socket", ":5000", "--enable-threads", "--threads", "4", "--module", "slack-doc:create_app()", "--workers", "2", "--buffer-size", "32768"]

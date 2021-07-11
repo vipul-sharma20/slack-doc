@@ -1,0 +1,17 @@
+version: '3'
+services:
+  slack-doc:
+      build: .
+      ports:
+          - "8000:8000"
+      command: ["uwsgi", "--http-socket", ":8000", "--enable-threads", "--threads", "4", "--module", "slack_doc:create_app()", "--workers", "2", "--buffer-size", "32768"]
+      environment:
+          - SLACK_API_TOKEN=xoxb-xxxxxxxxxxxx-xxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxx
+          - OUTLINE_HOST=https://outline.xxxxx.xxx
+          - OUTLINE_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+          - OUTLINE_COLLECTION_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+          - GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+          - FLASK_APP=slack_doc
+          # - REDIS_HOST=host.docker.internal
+          # - REDIS_HOST=localhost
+          # - REDIS_PORT=6379

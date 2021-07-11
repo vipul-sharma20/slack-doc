@@ -11,6 +11,7 @@ $text
 ---
 """
 
+
 class ExportMarkdown(ExportSlackThread):
     """
     Export thread to markdown.

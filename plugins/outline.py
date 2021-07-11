@@ -50,4 +50,8 @@ class ExportOutline(ExportMarkdown):
             "publish": False,
         }
 
-        requests.post(url, json=payload, headers=headers)
+        response = requests.post(url, json=payload, headers=headers)
+
+        if response.ok:
+            response_json = response.json()
+            self.send_message(f"{self.outline_host}{response_json['data']['url']}")

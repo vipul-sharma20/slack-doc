@@ -1,5 +1,10 @@
 from flask import Flask
 
+from slack_doc.cache import Cache
+
+# redis_client = redis.Redis(host=os.environ.get("REDIS_HOST", "localhost"), port=os.environ.get("REDIS_PORT", 6379), db=0)
+app_cache = Cache()
+
 
 def create_app():
     """Construct the core application."""
